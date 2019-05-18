@@ -86,7 +86,6 @@ WIN_COMBINATIONS = [
 
   def draw?
     !won? && full?
-    print "Cat's Game!"
   end
 
   def winner
