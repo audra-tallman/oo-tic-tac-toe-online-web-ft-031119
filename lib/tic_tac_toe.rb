@@ -52,17 +52,16 @@ WIN_COMBINATIONS = [
   end
   
   def turn
-    display_board
-    puts "Please enter 1-9:"
-    index = input_to_index
-    if !valid_move?(index)
+    puts "Please enter a number (1-9):"
+    user_input = gets.strip
+    index = input_to_index(user_input)
+    if valid_move?(index)
       token = current_player
-      move(index,token)
-    else 
+      move(index, token)
+    else
       turn
     end
     display_board
-  end
 
   def valid_move?(index)
     index.between?(0,8) && !position_taken?(index)
